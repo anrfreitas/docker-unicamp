@@ -8,7 +8,12 @@ Criação de imagens e container usando tecnologia Docker em ambiente Linux. Nes
 - sudo docker container run -d --name mysqlsrv -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 mysql:latest
 - sudo docker container run -d --name pgsrv -e POSTGRES_PASSWORD=123456 -p 5432:5432 postgres:latest
 
-## Apache local
-- sudo apt-get -y install php7.4 php7.4-cli php7.4-mbstring php7.4-gd php7.4-mysql php7.4-pgsql php7.4-sqlite php7.4-bcmath php7.4-bz2 php7.4-intl php7.4-zip php7.4-xml apache2
+## Configurando timeout da database mySQL
+- SET GLOBAL connect_timeout=28800;
+- SET GLOBAL interactive_timeout=28800;
+- SET GLOBAL wait_timeout=28800;
+
+## Criação de Apache Local
+- sudo apt-get -y install php7.4 php7.4-cli php7.4-mbstring php7.4-gd php7.4-mysql php7.4-pgsql php7.4-sqlite php7.4-bcmath php7.4-bz2 php7.4-intl php7.4-zip php7.4-xml php7.4-curl php7.4-imap apache2
 - sudo a2enmod php7.4
 - sudo a2enmod rewrite
