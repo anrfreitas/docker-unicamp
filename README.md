@@ -20,3 +20,7 @@ Criação de imagens e container usando tecnologia Docker em ambiente Linux. Nes
 - sudo apt-get -y install php7.4 php7.4-cli php7.4-mbstring php7.4-gd php7.4-mysql php7.4-pgsql php7.4-sqlite php7.4-bcmath php7.4-bz2 php7.4-intl php7.4-zip php7.4-xml php7.4-curl php7.4-imap apache2
 - sudo a2enmod php7.4
 - sudo a2enmod rewrite
+
+## Criação de aplicaçã pgAdmin4
+- docker pull dpage/pgadmin4
+- docker run --name pgadmin4 -p 5050:5050 -e 'PGADMIN_DEFAULT_EMAIL=admin@admin.com' -e 'PGADMIN_DEFAULT_PASSWORD=123456' -e 'PGADMIN_LISTEN_PORT=5050' -d dpage/pgadmin4
