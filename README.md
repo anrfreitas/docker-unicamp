@@ -24,3 +24,7 @@ Criação de imagens e container usando tecnologia Docker em ambiente Linux. Nes
 ## Criação de aplicação pgAdmin4 na porta 5050
 - docker pull dpage/pgadmin4
 - docker run --name pgadmin4 -p 5050:5050 -e 'PGADMIN_DEFAULT_EMAIL=admin@admin.com' -e 'PGADMIN_DEFAULT_PASSWORD=123456' -e 'PGADMIN_LISTEN_PORT=5050' -d dpage/pgadmin4
+
+## Copiando dump export do pgAdmin4 para máquina host
+- docker cp pgadmin4:/var/lib/pgadmin/storage/admin_admin.com/dumps/arquivo.csv
+OBS: admin_admin.com é o nome de usuário tranformado em caminho, o arroba se transforma em underline. "Dumps" é a pasta criada usando pgadmin4. Ex: admin@admin.com torna-se admin_admin.com
